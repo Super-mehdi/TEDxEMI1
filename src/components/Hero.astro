@@ -1,0 +1,42 @@
+---
+import Countdown from './Countdown.jsx';
+import CTAButton from './CTAButton.astro';
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-20">
+  <!-- Background Elements -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-1/4 -left-20 w-96 h-96 bg-ted-red/20 rounded-full blur-[120px]"></div>
+    <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-ted-red/10 rounded-full blur-[120px]"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10 text-center">
+    <div class="animate-on-scroll">
+      <p class="text-ted-red font-bold tracking-[0.3em] uppercase mb-4 text-sm md:text-base">8th Edition</p>
+      <h1 class="text-5xl md:text-8xl font-black mb-6 tracking-tighter">
+        TEDx<span class="text-white">EMI</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-12 font-light">
+        January 17, 2026 • 13:00 GMT+1 <br class="hidden md:block"/>
+        École Mohammadia d'Ingénieurs, Rabat
+      </p>
+    </div>
+
+    <div class="animate-on-scroll mb-16" style="transition-delay: 200ms;">
+      <Countdown targetDate="2026-01-17T13:00:00+01:00" client:load />
+    </div>
+
+    <div class="animate-on-scroll" style="transition-delay: 400ms;">
+      <CTAButton>Save Your Spot</CTAButton>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <a href="#about" aria-label="Scroll down">
+        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

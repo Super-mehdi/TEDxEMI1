@@ -1,0 +1,62 @@
+---
+---
+<nav id="main-nav" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
+  <div class="container mx-auto px-6 flex justify-between items-center">
+    <a href="#" class="text-2xl font-bold flex items-center">
+      <span class="text-ted-red">TEDx</span><span>EMI</span>
+    </a>
+    
+    <div class="hidden md:flex space-x-8 items-center">
+      <a href="#about" class="text-sm uppercase tracking-widest hover:text-ted-red transition-colors">About</a>
+      <a href="#theme" class="text-sm uppercase tracking-widest hover:text-ted-red transition-colors">Theme</a>
+      <a href="#speakers" class="text-sm uppercase tracking-widest hover:text-ted-red transition-colors">Speakers</a>
+      <a href="#sponsors" class="text-sm uppercase tracking-widest hover:text-ted-red transition-colors">Sponsors</a>
+      <a href="#organizers" class="text-sm uppercase tracking-widest hover:text-ted-red transition-colors">Organizers</a>
+    </div>
+
+    <div class="md:hidden">
+        <button id="menu-toggle" class="text-white focus:outline-none" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-black/95 absolute w-full h-screen flex flex-col items-center justify-center space-y-8 pb-20 border-t border-white/10">
+      <a href="#about" class="text-xl uppercase tracking-widest hover:text-ted-red transition-colors">About</a>
+      <a href="#theme" class="text-xl uppercase tracking-widest hover:text-ted-red transition-colors">Theme</a>
+      <a href="#speakers" class="text-xl uppercase tracking-widest hover:text-ted-red transition-colors">Speakers</a>
+      <a href="#sponsors" class="text-xl uppercase tracking-widest hover:text-ted-red transition-colors">Sponsors</a>
+      <a href="#organizers" class="text-xl uppercase tracking-widest hover:text-ted-red transition-colors">Organizers</a>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav?.classList.add('bg-black/90', 'backdrop-blur-md', 'py-3');
+      nav?.classList.remove('bg-transparent', 'py-4');
+    } else {
+      nav?.classList.remove('bg-black/90', 'backdrop-blur-md', 'py-3');
+      nav?.classList.add('bg-transparent', 'py-4');
+    }
+  });
+
+  menuToggle?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+      document.body.classList.toggle('overflow-hidden');
+  });
+
+  mobileLinks?.forEach(link => {
+      link.addEventListener('click', () => {
+          mobileMenu?.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+      });
+  });
+</script>

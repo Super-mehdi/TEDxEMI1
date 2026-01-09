@@ -1,11 +1,244 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import SpeakerCard from '../components/SpeakerCard.astro';
+import SponsorTier from '../components/SponsorTier.astro';
+import TeamMember from '../components/TeamMember.astro';
+import CTAButton from '../components/CTAButton.astro';
+import Footer from '../components/Footer.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const speakers = [
+  {
+    name: "Dr. Sarah Chen",
+    title: "AI Ethics Researcher",
+    bio: "Pioneering the conversation on responsible artificial intelligence and its impact on modern society.",
+    image: "https://i.pravatar.cc/400?u=sarah"
+  },
+  {
+    name: "Marc Dupont",
+    title: "Sustainable Architect",
+    bio: "Redefining urban spaces with eco-friendly designs that harmonize with nature and community needs.",
+    image: "https://i.pravatar.cc/400?u=marc"
+  },
+  {
+    name: "Amina Mansour",
+    title: "Social Entrepreneur",
+    bio: "Founder of grassroots initiatives focused on educational equity and technological accessibility in remote areas.",
+    image: "https://i.pravatar.cc/400?u=amina"
+  },
+  {
+    name: "James Wilson",
+    title: "Quantum Physicist",
+    bio: "Exploring the frontiers of quantum computing and its potential to solve humanity's most complex challenges.",
+    image: "https://i.pravatar.cc/400?u=james"
+  },
+  {
+    name: "Elena Rodriguez",
+    title: "Digital Artist",
+    bio: "Merging traditional art forms with immersive technology to create new emotional experiences.",
+    image: "https://i.pravatar.cc/400?u=elena"
+  },
+  {
+    name: "Karim Alaoui",
+    title: "Renewable Energy Expert",
+    bio: "Advocating for the transition to green energy through innovative storage solutions and policy reform.",
+    image: "https://i.pravatar.cc/400?u=karim"
+  }
+];
+
+const team = [
+    { name: "Ahmed Benani", role: "Lead Organizer", image: "https://i.pravatar.cc/150?u=ahmed" },
+    { name: "Laila Zahid", role: "Curation Head", image: "https://i.pravatar.cc/150?u=laila" },
+    { name: "Youssef Idrisi", role: "Logistics Manager", image: "https://i.pravatar.cc/150?u=youssef" },
+    { name: "Sara Mourad", role: "Communications", image: "https://i.pravatar.cc/150?u=sara" }
+];
 ---
 
 <Layout>
-	<Welcome />
+  <Navigation />
+  
+  <main>
+    <Hero />
+
+    <!-- About Sections -->
+    <section id="about" class="py-24 bg-black overflow-hidden">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div class="animate-on-scroll">
+            <h2 class="text-3xl md:text-5xl font-black mb-8">What is <span class="text-ted-red">TEDx</span>?</h2>
+            <div class="space-y-6 text-gray-400 text-lg leading-relaxed">
+              <p>
+                In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection.
+              </p>
+              <p>
+                These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized.
+              </p>
+              <p>
+                Our mission is to foster learning, inspiration and wonder—and provoke conversations that matter in our local community.
+              </p>
+            </div>
+          </div>
+          <div class="animate-on-scroll relative" style="transition-delay: 200ms;">
+            <div class="aspect-video bg-zinc-900 rounded-2xl flex items-center justify-center border border-white/10 group overflow-hidden">
+                <div class="absolute inset-0 bg-ted-red/5 group-hover:bg-ted-red/10 transition-colors"></div>
+                <p class="text-ted-red font-black text-6xl opacity-20">TEDx</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mt-32">
+          <div class="order-2 lg:order-1 animate-on-scroll relative">
+            <div class="aspect-video bg-zinc-900 rounded-2xl flex items-center justify-center border border-white/10 group overflow-hidden">
+                <div class="absolute inset-0 bg-white/5 group-hover:bg-white/10 transition-colors"></div>
+                <p class="text-white font-black text-6xl opacity-20 uppercase tracking-tighter">EMI</p>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2 animate-on-scroll" style="transition-delay: 200ms;">
+            <h2 class="text-3xl md:text-5xl font-black mb-8">About <span class="text-white">EMI</span></h2>
+            <div class="space-y-6 text-gray-400 text-lg leading-relaxed">
+              <p>
+                École Mohammadia d'Ingénieurs (EMI) is the premier engineering school in Morocco, founded in 1959. As a pioneer in technical education, EMI has consistently produced leaders who drive innovation and development across various sectors.
+              </p>
+              <p>
+                Hosting TEDx events at EMI is a natural extension of our school's commitment to excellence and intellectual growth. It provides our students and the wider community with a platform to engage with transformative ideas and visionary thinkers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theme Section -->
+    <section id="theme" class="py-32 relative bg-zinc-950 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-30">
+            <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-ted-red/10 via-transparent to-transparent"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-20 animate-on-scroll">
+                <h2 class="text-ted-red font-bold tracking-[0.3em] uppercase mb-4">The Theme</h2>
+                <h3 class="text-6xl md:text-9xl font-black italic tracking-tighter">VIA NOVA</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+                <div class="lg:col-span-2 animate-on-scroll">
+                    <p class="text-2xl md:text-4xl font-light text-white leading-tight mb-8">
+                        "Via Nova" — The New Way. It's more than just a path; it's a commitment to <span class="text-ted-red font-bold">innovation</span>, <span class="text-ted-red font-bold">transformation</span>, and the courage to explore the <span class="text-ted-red font-bold">unknown</span>.
+                    </p>
+                    <div class="h-1 w-24 bg-ted-red mb-8"></div>
+                    <div class="space-y-6 text-gray-400 text-lg">
+                        <p>
+                            In an era of rapid change, we find ourselves at a crossroads. The old ways of thinking and doing are being challenged, making room for new perspectives that can reshape our future. "Via Nova" explores these emerging paths.
+                        </p>
+                        <p>
+                            From technological breakthroughs to shifts in social consciousness, we invite our speakers and audience to embark on a journey of discovery. What are the new ways of living, working, and connecting that will define the next decade?
+                        </p>
+                    </div>
+                </div>
+                <div class="animate-on-scroll space-y-8" style="transition-delay: 200ms;">
+                    <div class="p-8 border-l-2 border-ted-red bg-white/5">
+                        <h4 class="text-white font-bold mb-2 uppercase tracking-wider">Innovation</h4>
+                        <p class="text-gray-400 text-sm italic">Breaking barriers and creating solutions for a better tomorrow.</p>
+                    </div>
+                    <div class="p-8 border-l-2 border-ted-red bg-white/5">
+                        <h4 class="text-white font-bold mb-2 uppercase tracking-wider">Perspective</h4>
+                        <p class="text-gray-400 text-sm italic">Seeing the world through new lenses to find hidden opportunities.</p>
+                    </div>
+                    <div class="p-8 border-l-2 border-ted-red bg-white/5">
+                        <h4 class="text-white font-bold mb-2 uppercase tracking-wider">Pioneering</h4>
+                        <p class="text-gray-400 text-sm italic">Leading the charge into uncharted territories with confidence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="py-24 bg-black">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 animate-on-scroll">
+          <div>
+            <h2 class="text-ted-red font-bold tracking-[0.3em] uppercase mb-4 text-sm">Lineup</h2>
+            <h3 class="text-4xl md:text-6xl font-black">Visionary <span class="italic">Voices</span></h3>
+          </div>
+          <p class="text-gray-500 max-w-sm mt-6 md:mt-0">
+            Meet the pioneers who will take the stage to share their ideas worth spreading.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {speakers.map((speaker, index) => (
+            <SpeakerCard 
+              name={speaker.name}
+              title={speaker.title}
+              bio={speaker.bio}
+              image={speaker.image}
+              delay={index * 100}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="py-24 bg-zinc-950">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-20 animate-on-scroll">
+          <h2 class="text-ted-red font-bold tracking-[0.3em] uppercase mb-4 text-sm">Partners</h2>
+          <h3 class="text-4xl md:text-6xl font-black">Supported By</h3>
+        </div>
+
+        <SponsorTier tier="Platinum" count={2} />
+        <SponsorTier tier="Gold" count={3} />
+        <SponsorTier tier="Silver" count={4} />
+      </div>
+    </section>
+
+    <!-- Organizers Section -->
+    <section id="organizers" class="py-24 bg-black">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-20 animate-on-scroll">
+          <h2 class="text-ted-red font-bold tracking-[0.3em] uppercase mb-4 text-sm">Organizers</h2>
+          <h3 class="text-4xl md:text-6xl font-black mb-8">The Great Debaters EMI</h3>
+          <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+            The Great Debaters EMI is more than just a club; it's a community of passionate individuals dedicated to the art of rhetoric, critical thinking, and impactful communication.
+          </p>
+          <a href="https://instagram.com/greatdebaters_emi" target="_blank" class="mt-8 inline-flex items-center text-ted-red hover:underline font-bold uppercase tracking-widest text-sm">
+            Follow our journey
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 max-w-4xl mx-auto animate-on-scroll">
+            {team.map(member => (
+                <TeamMember name={member.name} role={member.role} image={member.image} />
+            ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-24 bg-ted-red relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute -top-24 -left-24 w-96 h-96 border-4 border-white rounded-full"></div>
+            <div class="absolute -bottom-24 -right-24 w-96 h-96 border-4 border-white rounded-full"></div>
+        </div>
+        <div class="container mx-auto px-6 text-center relative z-10 animate-on-scroll">
+            <h3 class="text-4xl md:text-6xl font-black mb-8 text-white">Don't Miss Out</h3>
+            <p class="text-xl md:text-2xl mb-12 text-white/90 max-w-2xl mx-auto">
+                Be part of the "Via Nova" journey. Reserve your seat today and join the conversation.
+            </p>
+            <CTAButton class="bg-white !text-ted-red hover:bg-gray-100 hover:shadow-white/50">
+                Register Now
+            </CTAButton>
+        </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <CTAButton isSticky={true} class="hidden md:inline-block">
+    Register
+  </CTAButton>
 </Layout>

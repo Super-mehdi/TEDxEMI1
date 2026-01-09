@@ -1,0 +1,16 @@
+---
+const { href, class: className, isSticky = false } = Astro.props;
+---
+
+<a 
+  href={href || "https://forms.google.com/tedxemi-registration"} 
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={[
+    "inline-block bg-ted-red text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-ted-red/50 uppercase tracking-wider text-sm md:text-base",
+    isSticky ? "fixed bottom-8 right-8 z-50 md:bottom-12 md:right-12" : "",
+    className
+  ]}
+>
+  <slot>Reserve Your Seat</slot>
+</a>

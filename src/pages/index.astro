@@ -12,6 +12,13 @@ import tedxImg from '../assets/tedx.png';
 import emiImg from '../assets/emi.jpeg';
 import tgdLogo from '../assets/TGD.png';
 
+// Sponsor Logos
+import astaLogo from '../assets/asta.jpg';
+import diwanLogo from '../assets/diwan.jpg';
+import rahmouniLogo from '../assets/rahmouni.png';
+import oulmesLogo from '../assets/oulmes.jpeg';
+import ismacLogo from '../assets/ismac.png';
+
 const speakers = [
   {
     name: "Dr. Sarah Chen",
@@ -77,7 +84,7 @@ const speakers = [
             </div>
           </div>
           <div class="animate-on-scroll relative" style="transition-delay: 200ms;">
-            <div class="aspect-video bg-zinc-900 rounded-2xl flex items-center justify-center border border-white/10 group overflow-hidden">
+            <div class="aspect-video bg-zinc-900 rounded-3xl flex items-center justify-center border border-white/10 group overflow-hidden">
                 <div class="absolute inset-0 bg-ted-red/5 group-hover:bg-ted-red/10 transition-colors z-10"></div>
                 <img src={tedxImg.src} class="w-full h-full object-cover relative z-0" alt="TEDx Event - Ideas Worth Spreading"/>
                 <!--<p class="text-ted-red font-black text-6xl opacity-20">TEDx</p>-->
@@ -87,7 +94,7 @@ const speakers = [
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mt-32">
           <div class="order-2 lg:order-1 animate-on-scroll relative">
-            <div class="aspect-video bg-zinc-900 rounded-2xl flex items-center justify-center border border-white/10 group overflow-hidden">
+            <div class="aspect-video bg-zinc-900 rounded-3xl flex items-center justify-center border border-white/10 group overflow-hidden">
                 <div class="absolute inset-0 bg-white/5 group-hover:bg-white/10 transition-colors"></div>
                 <img src={emiImg.src} class="w-full h-full object-cover relative z-0" alt="TEDx Event - Ideas Worth Spreading"/>
             </div>
@@ -192,10 +199,16 @@ const speakers = [
           <h2 class="text-ted-red font-bold tracking-[0.3em] uppercase mb-4 text-sm">Partners</h2>
           <h3 class="text-4xl md:text-6xl font-black">Supported By</h3>
         </div>
-
-        <SponsorTier tier="Platinum" count={2} />
-        <SponsorTier tier="Gold" count={3} />
-        <SponsorTier tier="Silver" count={4} />
+        <SponsorTier 
+          tier="" 
+          sponsors={[
+            { name: "ASTA", src: astaLogo },
+            { name: "Oulmes", src: oulmesLogo },
+            { name: "Rahmouni", src: rahmouniLogo },
+            { name: "Diwan", src: diwanLogo },
+            { name: "ISMAC", src: ismacLogo }
+          ]} 
+        />
       </div>
     </section>
 
@@ -207,7 +220,7 @@ const speakers = [
           
           <div class="mb-12 relative inline-block group">
             <div class="absolute inset-0 bg-ted-red/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="w-48 h-48 md:w-64 md:h-64 bg-zinc-900 rounded-2xl flex items-center justify-center border border-white/10 overflow-hidden relative z-10 group-hover:border-ted-red/50 transition-all duration-500 group-hover:scale-105">
+            <div class="w-48 h-48 md:w-64 md:h-64 bg-zinc-900 rounded-3xl flex items-center justify-center border border-white/10 overflow-hidden relative z-10 group-hover:border-ted-red/50 transition-all duration-500 group-hover:scale-105">
                <img src={tgdLogo.src} class="w-full h-full object-cover" alt="The Great Debaters EMI Logo" />
                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>

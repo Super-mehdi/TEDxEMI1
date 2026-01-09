@@ -1,0 +1,55 @@
+---
+interface Props {
+  className?: string;
+  size?: number | string;
+}
+
+const { className = "", size = "100%" } = Astro.props;
+---
+
+<svg 
+  width={size} 
+  height={size} 
+  viewBox="0 0 100 100" 
+  fill="none" 
+  xmlns="http://www.w3.org/2000/svg"
+  class={className}
+>
+  <!-- Phoenix Design: Elegant Rising Bird -->
+  <!-- Main Wings and Body -->
+  <path 
+    d="M50 35C45 35 35 30 20 15C25 35 35 50 50 55C65 50 75 35 80 15C65 30 55 35 50 35Z" 
+    fill="currentColor"
+  />
+  <!-- Head and Neck -->
+  <path 
+    d="M50 35C48 30 46 25 46 20C46 15 48 12 50 12C52 12 54 15 54 20C54 25 52 30 50 35Z" 
+    fill="currentColor"
+  />
+  <!-- Beak -->
+  <path 
+    d="M50 12L53 14L50 16L50 12Z" 
+    fill="currentColor"
+  />
+  <!-- Inner Wing Details (Feather-like) -->
+  <path 
+    d="M30 25C35 35 45 45 50 48C55 45 65 35 70 25C60 30 55 32 50 32C45 32 40 30 30 25Z" 
+    fill="currentColor" 
+    opacity="0.6"
+  />
+  <!-- Long Flowing Tail Feathers -->
+  <path 
+    d="M50 55C48 65 44 75 35 90C45 82 48 72 50 65C52 72 55 82 65 90C56 75 52 65 50 55Z" 
+    fill="currentColor"
+  />
+  <path 
+    d="M50 55C50 70 48 80 42 95C48 85 50 75 50 55Z" 
+    fill="currentColor" 
+    opacity="0.8"
+  />
+  <path 
+    d="M50 55C50 70 52 80 58 95C52 85 50 75 50 55Z" 
+    fill="currentColor" 
+    opacity="0.8"
+  />
+</svg>

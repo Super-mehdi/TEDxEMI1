@@ -65,6 +65,21 @@ const {
             document.addEventListener('DOMContentLoaded', () => {
                 const animateElements = document.querySelectorAll('.animate-on-scroll');
                 animateElements.forEach(el => observer.observe(el));
+
+                // Create embers
+                const container = document.querySelector('.ember-container');
+                if (container) {
+                    for (let i = 0; i < 20; i++) {
+                        const ember = document.createElement('div');
+                        ember.className = 'ember';
+                        ember.style.left = `${Math.random() * 100}%`;
+                        ember.style.width = `${Math.random() * 4 + 2}px`;
+                        ember.style.height = ember.style.width;
+                        ember.style.animationDelay = `${Math.random() * 5}s`;
+                        ember.style.animationDuration = `${Math.random() * 3 + 4}s`;
+                        container.appendChild(ember);
+                    }
+                }
             });
 
             // Re-run observer when content changes (useful for client-side routing if added)

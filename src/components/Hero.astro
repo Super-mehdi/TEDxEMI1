@@ -1,6 +1,7 @@
 ---
 import Countdown from './Countdown.jsx';
 import CTAButton from './CTAButton.astro';
+import PhoenixIcon from './PhoenixIcon.astro';
 ---
 
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-20">
@@ -8,10 +9,21 @@ import CTAButton from './CTAButton.astro';
   <div class="absolute inset-0 z-0">
     <div class="absolute top-1/4 -left-20 w-96 h-96 bg-ted-red/20 rounded-full blur-[120px]"></div>
     <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-ted-red/10 rounded-full blur-[120px]"></div>
+    
+    <!-- Animated Phoenix Background Element -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none">
+      <PhoenixIcon className="w-[800px] h-[800px] animate-pulse" />
+    </div>
+    
+    <!-- Floating Embers -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="ember-container"></div>
+    </div>
   </div>
 
   <div class="container mx-auto px-6 relative z-10 text-center">
-    <div class="animate-on-scroll">
+    <div class="animate-on-scroll flex flex-col items-center">
+      <PhoenixIcon className="text-ted-red mb-4 animate-float" size={60} />
       <p class="text-ted-red font-bold tracking-[0.3em] uppercase mb-4 text-sm md:text-base">8th Edition</p>
       <h1 class="text-5xl md:text-8xl font-black mb-6 tracking-tighter">
         TEDx<span class="text-white">EMI</span>

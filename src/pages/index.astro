@@ -8,6 +8,10 @@ import CTAButton from '../components/CTAButton.astro';
 import Footer from '../components/Footer.astro';
 import PhoenixIcon from '../components/PhoenixIcon.astro';
 
+import tedxImg from '../assets/tedx.png';
+import emiImg from '../assets/emi.jpeg';
+import tgdLogo from '../assets/TGD.png';
+
 const speakers = [
   {
     name: "Dr. Sarah Chen",
@@ -75,7 +79,7 @@ const speakers = [
           <div class="animate-on-scroll relative" style="transition-delay: 200ms;">
             <div class="aspect-video bg-zinc-900 rounded-2xl flex items-center justify-center border border-white/10 group overflow-hidden">
                 <div class="absolute inset-0 bg-ted-red/5 group-hover:bg-ted-red/10 transition-colors z-10"></div>
-                <img src="src/assets/tedx.png" class="w-full h-full object-cover relative z-0" alt="TEDx Event - Ideas Worth Spreading"/>
+                <img src={tedxImg.src} class="w-full h-full object-cover relative z-0" alt="TEDx Event - Ideas Worth Spreading"/>
                 <!--<p class="text-ted-red font-black text-6xl opacity-20">TEDx</p>-->
             </div>
           </div>
@@ -85,7 +89,7 @@ const speakers = [
           <div class="order-2 lg:order-1 animate-on-scroll relative">
             <div class="aspect-video bg-zinc-900 rounded-2xl flex items-center justify-center border border-white/10 group overflow-hidden">
                 <div class="absolute inset-0 bg-white/5 group-hover:bg-white/10 transition-colors"></div>
-                <img src="src/assets/emi.jpeg" class="w-full h-full object-cover relative z-0" alt="TEDx Event - Ideas Worth Spreading"/>
+                <img src={emiImg.src} class="w-full h-full object-cover relative z-0" alt="TEDx Event - Ideas Worth Spreading"/>
             </div>
           </div>
           <div class="order-1 lg:order-2 animate-on-scroll" style="transition-delay: 200ms;">
@@ -204,7 +208,7 @@ const speakers = [
           <div class="mb-12 relative inline-block group">
             <div class="absolute inset-0 bg-ted-red/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="w-48 h-48 md:w-64 md:h-64 bg-zinc-900 rounded-2xl flex items-center justify-center border border-white/10 overflow-hidden relative z-10 group-hover:border-ted-red/50 transition-all duration-500 group-hover:scale-105">
-               <img src="/src/assets/TGD.png" class="w-full h-full object-cover" alt="The Great Debaters EMI Logo" />
+               <img src={tgdLogo.src} class="w-full h-full object-cover" alt="The Great Debaters EMI Logo" />
                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
           </div>

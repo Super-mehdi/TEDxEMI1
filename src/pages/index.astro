@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
-import SpeakerCard from '../components/SpeakerCard.astro';
+import FeatherCard from '../components/FeatherCard.astro';
 import SponsorTier from '../components/SponsorTier.astro';
 import CTAButton from '../components/CTAButton.astro';
 import Footer from '../components/Footer.astro';
@@ -19,42 +19,62 @@ import rahmouniLogo from '../assets/rahmouni.png';
 import oulmesLogo from '../assets/oulmes.jpeg';
 import ismacLogo from '../assets/ismac.png';
 
-const speakers = [
+const speakerChapters = [
   {
-    name: "Dr. Sarah Chen",
-    title: "AI Ethics Researcher",
-    bio: "Pioneering the conversation on responsible artificial intelligence and its impact on modern society.",
-    image: "https://i.pravatar.cc/400?u=sarah"
+    title: "CHAPTER I — AWAKENING THE PATH",
+    feathers: [
+      {
+        title: "The Invisible",
+        theme: "Perception",
+        description: "The journey begins where sight ends. The most powerful forces escape the eye, yet they govern everything. Direction resides beneath the surface.",
+        image: undefined, // Add this when you have the speaker photo
+      },
+      {
+        title: "Identity",
+        theme: "Identity",
+        description: "To exist is not to imitate—it's to sign a work. Defining presence and refusing to be part of someone else's scenery. The phoenix stops copying others' flight and begins defining its own.",
+      },
+      {
+        title: "Truth",
+        theme: "Truth",
+        description: "The moment of confrontation. Chaos, imperfection, and contradiction are not obstacles to creation—they are its raw material. The phoenix no longer rejects its ashes. It claims them.",
+      }
+    ]
   },
   {
-    name: "Marc Dupont",
-    title: "Sustainable Architect",
-    bio: "Redefining urban spaces with eco-friendly designs that harmonize with nature and community needs.",
-    image: "https://i.pravatar.cc/400?u=marc"
+    title: "CHAPTER II — SUSTAINING THE FLAME",
+    feathers: [
+      {
+        title: "Transformation",
+        theme: "Transformation",
+        description: "Innovation is not always disruption. Progress as intentional continuity—reviving what already nourishes the world rather than erasing it. Renewal can spring from what already exists.",
+      },
+      {
+        title: "Courage",
+        theme: "Endurance",
+        description: "Courage is not a spectacle. It's perseverance far from applause—moving forward without guarantees when recognition is absent. Endurance is a discipline.",
+      },
+      {
+        title: "Agility",
+        theme: "Adaptation",
+        description: "The future doesn't wait. In our era, advantage no longer belongs to the biggest, but to those who learn the fastest. The phoenix learns to move, pivot, and evolve.",
+      }
+    ]
   },
   {
-    name: "Amina Mansour",
-    title: "Social Entrepreneur",
-    bio: "Founder of grassroots initiatives focused on educational equity and technological accessibility in remote areas.",
-    image: "https://i.pravatar.cc/400?u=amina"
-  },
-  {
-    name: "James Wilson",
-    title: "Quantum Physicist",
-    bio: "Exploring the frontiers of quantum computing and its potential to solve humanity's most complex challenges.",
-    image: "https://i.pravatar.cc/400?u=james"
-  },
-  {
-    name: "Elena Rodriguez",
-    title: "Digital Artist",
-    bio: "Merging traditional art forms with immersive technology to create new emotional experiences.",
-    image: "https://i.pravatar.cc/400?u=elena"
-  },
-  {
-    name: "Karim Alaoui",
-    title: "Renewable Energy Expert",
-    bio: "Advocating for the transition to green energy through innovative storage solutions and policy reform.",
-    image: "https://i.pravatar.cc/400?u=karim"
+    title: "CHAPTER III — CARRYING THE FIRE FORWARD",
+    feathers: [
+      {
+        title: "Bridges",
+        theme: "Connection",
+        description: "Success reaches its limit when it remains solitary. Building bridges where walls once stood. Meaning multiplies when shared—the link is a responsibility.",
+      },
+      {
+        title: "Sovereignty",
+        theme: "Legacy & Structure",
+        description: "Sovereignty is not decreed—it is built. Transforming momentum into system: vision becomes structure, ambition becomes permanence. The phoenix no longer burns. It illuminates.",
+      }
+    ]
   }
 ];
 ---
@@ -170,24 +190,37 @@ const speakers = [
       <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row justify-between items-end mb-16 animate-on-scroll">
           <div>
-            <h2 class="text-ted-red font-bold tracking-[0.3em] uppercase mb-4 text-sm">Lineup</h2>
-            <h3 class="text-4xl md:text-6xl font-black">Visionary <span class="italic">Voices</span></h3>
+            <h2 class="text-ted-red font-bold tracking-[0.3em] uppercase mb-4 text-sm">Via Nova</h2>
+            <h3 class="text-4xl md:text-6xl font-black">THE <span class="text-ted-red">FEATHERS</span></h3>
           </div>
-          <p class="text-gray-500 max-w-sm mt-6 md:mt-0">
-            Meet the pioneers who will take the stage to share their ideas worth spreading.
+          <p class="text-gray-400 max-w-sm mt-6 md:mt-0 italic">
+            "8 cardinal feathers of the phoenix, each a stage in the journey of rebirth."
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {speakers.map((speaker, index) => (
-            <SpeakerCard 
-              name={speaker.name}
-              title={speaker.title}
-              bio={speaker.bio}
-              image={speaker.image}
-              delay={index * 100}
-            />
+        <div class="space-y-20">
+          {speakerChapters.map((chapter, chapterIndex) => (
+            <div class="animate-on-scroll">
+              <h3 class="text-xl md:text-2xl font-black text-white/40 mb-10 tracking-[0.2em] uppercase text-center">
+                {chapter.title}
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {chapter.feathers.map((feather, index) => (
+                  <FeatherCard 
+                    title={feather.title}
+                    theme={feather.theme}
+                    description={feather.description}
+                    image={feather.image}
+                    delay={(chapterIndex * 3 + index) * 100}
+                  />
+                ))}
+              </div>
+            </div>
           ))}
+        </div>
+
+        <div class="mt-20 text-center animate-on-scroll">
+            <p class="text-gray-500 italic">Speakers to be revealed soon</p>
         </div>
       </div>
     </section>

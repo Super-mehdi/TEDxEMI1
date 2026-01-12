@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  theme: string;
+  description: string;
+  image?: string;
+  delay?: number;
+}
+
+const { title, theme, description, image, delay = 0 } = Astro.props;
+---
+
+<div 
+  class="animate-on-scroll bg-zinc-900/50 rounded-3xl overflow-hidden group border border-white/5 hover:border-ted-red/50 transition-all duration-500 relative"
+  style={`transition-delay: ${delay}ms;`}
+>
+  <!-- Image Container -->
+  <div class="aspect-square bg-zinc-900 overflow-hidden relative group-hover:scale-105 transition-transform duration-700 flex items-center justify-center">
+    <div class="absolute inset-0 bg-gradient-to-br from-ted-red/10 to-transparent z-10"></div>
+    
+    {image ? (
+      <img 
+        src={image} 
+        alt={title}
+        class="w-full h-full object-cover transition-all duration-700 ease-out z-20 group-hover:scale-110"
+      />
+    ) : (
+      <div class="z-20 transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-12">
+        <svg 
+          viewBox="0 0 24 24" 
+          class="w-40 h-40 text-ted-red"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+          <line x1="16" y1="8" x2="2" y2="22"></line>
+          <line x1="17.5" y1="15" x2="9" y2="15"></line>
+        </svg>
+      </div>
+    )}
+    
+    <!-- Glow Effect -->
+    <div class="absolute inset-0 bg-ted-red/5 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+  </div>
+
+  <div class="p-8 relative z-10">
+    <h3 class="text-2xl font-black text-white mb-2 tracking-tight group-hover:text-ted-red transition-colors">
+      {title}
+    </h3>
+    <p class="text-ted-red text-sm font-bold uppercase tracking-widest mb-4 opacity-80 group-hover:opacity-100 transition-opacity">
+      {theme}
+    </p>
+    <p class="text-gray-400 text-base leading-relaxed">
+      {description}
+    </p>
+  </div>
+</div>

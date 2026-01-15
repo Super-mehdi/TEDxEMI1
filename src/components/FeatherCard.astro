@@ -3,11 +3,12 @@ interface Props {
   title: string;
   theme: string;
   description: string;
-  image?: string;
+  image?: any;
+  imageClass?: string;
   delay?: number;
 }
 
-const { title, theme, description, image, delay = 0 } = Astro.props;
+const { title, theme, description, image, imageClass, delay = 0 } = Astro.props;
 ---
 
 <div 
@@ -20,9 +21,12 @@ const { title, theme, description, image, delay = 0 } = Astro.props;
     
     {image ? (
       <img 
-        src={image} 
+        src={typeof image === 'string' ? image : image.src} 
         alt={title}
-        class="w-full h-full object-cover transition-all duration-700 ease-out z-20 group-hover:scale-110"
+        class:list={[
+          "w-[105%] h-[105%] max-w-none object-cover transition-all duration-700 ease-out z-20 group-hover:scale-110",
+          imageClass
+        ]}
       />
     ) : (
       <div class="z-20 transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-12">

@@ -19,6 +19,9 @@ import rahmouniLogo from '../assets/rahmouni.png';
 import oulmesLogo from '../assets/oulmes.jpeg';
 import ismacLogo from '../assets/ismac.png';
 
+import lahlouImg from '../assets/lahlou.jpeg';
+import aliBensoudaImg from '../assets/bensouda.jpeg';
+
 const speakerChapters = [
   {
     title: "CHAPTER I — AWAKENING THE PATH",
@@ -27,12 +30,14 @@ const speakerChapters = [
         title: "The Invisible",
         theme: "Perception",
         description: "The journey begins where sight ends. The most powerful forces escape the eye, yet they govern everything. Direction resides beneath the surface.",
-        image: undefined, // Add this when you have the speaker photo
       },
       {
-        title: "Identity",
-        theme: "Identity",
-        description: "To exist is not to imitate—it's to sign a work. Defining presence and refusing to be part of someone else's scenery. The phoenix stops copying others' flight and begins defining its own.",
+        title: "Hicham LAHLOU",
+        theme: "Identity feather",
+        description: "In a world full of copycats, designing our own objects is a refusal to live in someone else’s scenery. It’s our way of leaving a mark on the world, turning perseverance into an act of identity with every creation.\n" +
+            "Hicham Lahlou embodies this vision as a pioneer of contemporary Moroccan design: founder of Africa Design Organization, first African designer featured on major international stages, collaborator with global brands and institutions, and a driving force behind positioning design as a cultural, economic, and political act in Africa.",
+        image: lahlouImg,
+        imageClass: "scale-110",
       },
       {
         title: "Truth",
@@ -45,9 +50,17 @@ const speakerChapters = [
     title: "CHAPTER II — SUSTAINING THE FLAME",
     feathers: [
       {
-        title: "Transformation",
-        theme: "Transformation",
-        description: "Innovation is not always disruption. Progress as intentional continuity—reviving what already nourishes the world rather than erasing it. Renewal can spring from what already exists.",
+        title: "Ali BENSOUDA",
+        theme: "Transformation feather",
+        description: "When tradition refuses to fade , and technology chooses to listen , Africa raises not by erasing its\n" +
+            "past , but by turning it into power .\n" +
+            "Ali Bensouda, the co-founder of Outlierz Ventures and Venture Partner for Morocco , stands at that\n" +
+            "intersection , where technology reshapes Africa's old industry . From the early roots of old schools\n" +
+            "sectors to the heart of modernity and innovation . With our guest we'll discover how can tech\n" +
+            "awaken Africa's industry from it's prolonged slumber , by honoring its roots while unlocking new\n" +
+            "possibilities .\n" +
+            "On the TED stage, every word matters and every idea hums with the potential to change our reality .",
+        image: aliBensoudaImg,
       },
       {
         title: "Courage",
@@ -211,6 +224,7 @@ const speakerChapters = [
                     theme={feather.theme}
                     description={feather.description}
                     image={feather.image}
+                    imageClass={feather.imageClass}
                     delay={(chapterIndex * 3 + index) * 100}
                   />
                 ))}

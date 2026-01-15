@@ -19,8 +19,9 @@ import rahmouniLogo from '../assets/rahmouni.png';
 import oulmesLogo from '../assets/oulmes.jpeg';
 import ismacLogo from '../assets/ismac.png';
 
-import lahlouImg from '../assets/lahlou.jpeg';
+import lahlouImg from '../assets/lahlou.jpg';
 import aliBensoudaImg from '../assets/bensouda.jpeg';
+import baibanouImg from '../assets/baibanou.jpg';
 
 const speakerChapters = [
   {
@@ -33,7 +34,7 @@ const speakerChapters = [
       },
       {
         title: "Hicham LAHLOU",
-        theme: "Identity feather",
+        theme: "The Identity feather",
         description: "In a world full of copycats, designing our own objects is a refusal to live in someone else’s scenery. It’s our way of leaving a mark on the world, turning perseverance into an act of identity with every creation.\n" +
             "Hicham Lahlou embodies this vision as a pioneer of contemporary Moroccan design: founder of Africa Design Organization, first African designer featured on major international stages, collaborator with global brands and institutions, and a driving force behind positioning design as a cultural, economic, and political act in Africa.",
         image: lahlouImg,
@@ -51,10 +52,10 @@ const speakerChapters = [
     feathers: [
       {
         title: "Ali BENSOUDA",
-        theme: "Transformation feather",
+        theme: "The Transformation feather",
         description: "When tradition refuses to fade , and technology chooses to listen , Africa raises not by erasing its\n" +
             "past , but by turning it into power .\n" +
-            "Ali Bensouda, the co-founder of Outlierz Ventures and Venture Partner for Morocco , stands at that\n" +
+            "Ali Bensouda, the CEO of Capital Maroc (SA) and fierce investor, stands at that\n" +
             "intersection , where technology reshapes Africa's old industry . From the early roots of old schools\n" +
             "sectors to the heart of modernity and innovation . With our guest we'll discover how can tech\n" +
             "awaken Africa's industry from it's prolonged slumber , by honoring its roots while unlocking new\n" +
@@ -63,9 +64,16 @@ const speakerChapters = [
         image: aliBensoudaImg,
       },
       {
-        title: "Courage",
-        theme: "Endurance",
-        description: "Courage is not a spectacle. It's perseverance far from applause—moving forward without guarantees when recognition is absent. Endurance is a discipline.",
+        title: "Bouchra BAIBANOU",
+        theme: "The courage feather",
+        description: "Have you ever been halted by an inner thought? Ever felt torn between stepping into the unknown\n" +
+            "and fearing you might regret it?\n" +
+            "Bouchra Baibanou provides the answer , as the first moroccan and arabe woman to summit\n" +
+            "Annapurna . In her eyes, each of us is a book, and life hands us countless blank pages. Choosing an\n" +
+            "unusual path may feel harsh at first, and others may not understand the story you’re writing. Yet,\n" +
+            "true success lies in choosing your own title, crafting your own chapters, and following the story only\n" +
+            "you are meant to tell.",
+        image: baibanouImg,
       },
       {
         title: "Agility",
@@ -224,18 +232,18 @@ const speakerChapters = [
                     theme={feather.theme}
                     description={feather.description}
                     image={feather.image}
-                    imageClass={feather.imageClass}
                     delay={(chapterIndex * 3 + index) * 100}
                   />
                 ))}
               </div>
+                <!--imageClass={feather.imageClass}-->
             </div>
           ))}
         </div>
 
-        <div class="mt-20 text-center animate-on-scroll">
-            <p class="text-gray-500 italic">Speakers to be revealed soon</p>
-        </div>
+        <!--<div class="mt-20 text-center animate-on-scroll">-->
+        <!--    <p class="text-gray-500 italic">Speakers to be revealed soon</p>-->
+        <!--</div>-->
       </div>
     </section>
 
